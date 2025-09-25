@@ -1,56 +1,42 @@
 // No arquivo src/components/Calculator.vue
 
 <template>
-    <!-- Container principal da calculadora -->
-    <div class="calculadora-container">
-        <!-- Estrutura da calculadora -->
-        <div class="calculadora">
-            <!-- Título da calculadora -->
-            <h1 class="titulo">RB-420C</h1>
-            <!-- Display para mostrar a expressão e o resultado -->
-            <div class="display">
-                <!-- Mostra a expressão digitada ou 0 se estiver vazio -->
-                <h3>{{ equation || '0' }}</h3>
-                <!-- Mostra o resultado do cálculo -->
-                <h2>{{ result }}</h2>
-            </div>
-            <!-- Teclado da calculadora -->
-            <div class="teclado">
-                <!-- Botão para limpar tudo -->
-                <button class="botao operacao-c" @click="clear">C</button>
-                <!-- Botão para apagar o último caractere -->
-                <button class="botao" @click="deleteLast">DEL</button>
-                <!-- Botão para divisão -->
-                <button class="botao" @click="addToEquation('/')">÷</button>
-                <!-- Botão para multiplicação -->
-                <button class="botao" @click="addToEquation('*')">×</button>
-
-                <!-- Botões numéricos -->
-                <button class="botao" @click="addToEquation('7')">7</button>
-                <button class="botao" @click="addToEquation('8')">8</button>
-                <button class="botao" @click="addToEquation('9')">9</button>
-                <!-- Botão para subtração -->
-                <button class="botao" @click="addToEquation('-')">-</button>
-
-                <button class="botao" @click="addToEquation('4')">4</button>
-                <button class="botao" @click="addToEquation('5')">5</button>
-                <button class="botao" @click="addToEquation('6')">6</button>
-                <!-- Botão para adição -->
-                <button class="botao" @click="addToEquation('+')">+</button>
-
-                <button class="botao" @click="addToEquation('1')">1</button>
-                <button class="botao" @click="addToEquation('2')">2</button>
-                <button class="botao" @click="addToEquation('3')">3</button>
-                <!-- Botão de igual para calcular -->
-                <button class="botao igual" @click="calculate" style="grid-row: span 2;">=</button>
-
-                <!-- Botão zero ocupa duas colunas -->
-                <button class="botao" @click="addToEquation('0')" style="grid-column: span 2;">0</button>
-                <!-- Botão para ponto decimal -->
-                <button class="botao" @click="addToEquation('.')">.</button>
-            </div>
-        </div>
-    </div>
+    <v-container class="calculadora-container">
+        <v-row justify="center" align="center">
+            <v-col cols="12" md="4">
+                <v-card class="calculadora">
+                    <!-- Título da calculadora -->
+                    <v-card-title class="titulo">RB-420C</v-card-title>
+                    <!-- Display para mostrar a expressão e o resultado -->
+                    <div class="display">
+                        <h3>{{ equation || '0' }}</h3>
+                        <h2>{{ result }}</h2>
+                    </div>
+                    <!-- Teclado da calculadora -->
+                    <div class="teclado">
+                        <v-btn class="botao operacao-c" @click="clear">C</v-btn>
+                        <v-btn class="botao" @click="deleteLast">DEL</v-btn>
+                        <v-btn class="botao" @click="addToEquation('/')">÷</v-btn>
+                        <v-btn class="botao" @click="addToEquation('*')">×</v-btn>
+                        <v-btn class="botao" @click="addToEquation('7')">7</v-btn>
+                        <v-btn class="botao" @click="addToEquation('8')">8</v-btn>
+                        <v-btn class="botao" @click="addToEquation('9')">9</v-btn>
+                        <v-btn class="botao" @click="addToEquation('-')">-</v-btn>
+                        <v-btn class="botao" @click="addToEquation('4')">4</v-btn>
+                        <v-btn class="botao" @click="addToEquation('5')">5</v-btn>
+                        <v-btn class="botao" @click="addToEquation('6')">6</v-btn>
+                        <v-btn class="botao" @click="addToEquation('+')">+</v-btn>
+                        <v-btn class="botao" @click="addToEquation('1')">1</v-btn>
+                        <v-btn class="botao" @click="addToEquation('2')">2</v-btn>
+                        <v-btn class="botao" @click="addToEquation('3')">3</v-btn>
+                        <v-btn class="botao igual" @click="calculate" style="grid-row: span 2;">=</v-btn>
+                        <v-btn class="botao" @click="addToEquation('0')" style="grid-column: span 2;">0</v-btn>
+                        <v-btn class="botao" @click="addToEquation('.')">.</v-btn>
+                    </div>
+                </v-card>
+            </v-col>
+        </v-row>
+    </v-container>
 </template>
 
 <script>
@@ -166,6 +152,7 @@ export default {
     margin: 0; /* Remove margem */
     font-size: 2em; /* Tamanho maior */
     min-height: 38px; /* Altura mínima */
+    
 }
 
 /* Grade do teclado */
@@ -185,6 +172,10 @@ export default {
     background-color: #505050; /* Fundo cinza escuro */
     color: white; /* Texto branco */
     transition: background-color 0.2s; /* Transição suave */
+    /* centraliza o texto no botão */
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 /* Efeito hover nos botões */
