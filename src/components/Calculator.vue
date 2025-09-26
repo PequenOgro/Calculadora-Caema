@@ -3,7 +3,7 @@
 <template>
     <v-container class="calculadora-container">
         <v-row class="v-row" justify="center" align="center">
-            <v-col cols="12" md="4">
+            <v-col  cols="11" sm="8" md="4" lg="3">
                 <v-card class="calculadora">
                     <!-- Display para mostrar a expressão e o resultado -->
                     <div class="display">
@@ -110,12 +110,9 @@ export default {
 /* Caixa da calculadora */
 .calculadora {
     width: 340px; /* Largura fixa */
-    background-color: rgba(45, 45, 45, 0.9); /* Fundo escuro com transparência */
-    backdrop-filter: blur(5px); /* Efeito de desfoque */
-    border-radius: 10px; /* Cantos arredondados */
     padding: 20px; /* Espaçamento interno */
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4); /* Sombra */
-    border: 1px solid rgba(255, 255, 255, 0.1); /* Borda sutil */
+     /*  Garante que nada "vaze" das bordas arredondadas */
+    overflow: hidden; 
 }
 
 /* Título da calculadora */
@@ -142,6 +139,9 @@ export default {
     display: flex;
     flex-direction: column;
     justify-content: center;
+
+    box-shadow: none;
+    border: 1px solid rgba(0, 0, 0, 0.3); /* Uma borda interna sutil */
 }
 
 /* Expressão digitada */
@@ -172,7 +172,7 @@ export default {
     padding: 20px; /* Espaçamento interno */
     font-size: 1.5em; /* Tamanho da fonte */
     border: none; /* Sem borda */
-    border-radius: 5px; /* Cantos arredondados */
+    border-radius: 8px; /* Cantos arredondados */
     cursor: pointer; /* Cursor de mão */
     background-color: #505050; /* Fundo cinza escuro */
     color: white; /* Texto branco */
@@ -181,6 +181,9 @@ export default {
     display: flex;
     justify-content: center;
     align-items: center;
+
+     /* AJUSTE 5: Sombra sutil nos botões para profundidade, sem linhas pretas */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 /* Efeito hover nos botões */
