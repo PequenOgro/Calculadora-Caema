@@ -4,7 +4,7 @@
   <div class="calculadora-centralizada">
     <v-card class="calculadora">
 
-      <h1 class="titulo">RB-420C</h1>
+      <h1 class="titulo">CALCULADORA CAEMA</h1>
 
       <div class="display">
         <h3>{{ equation || '0' }}</h3>
@@ -83,9 +83,10 @@ export default {
     align-items: center;
     width: 100vw;
     height: 100vh;
-    background-image: url('../assets/images/mesa.png');
+    background-image: url('../assets/images/blackboard-inscribed-with-scientific-formulas-calculations_1150-19413.jpg');
     background-size: cover;
     background-position: center;
+    background-repeat: no-repeat;
 }
 
 /* Caixa da calculadora (seu estilo original) */
