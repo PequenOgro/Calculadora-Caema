@@ -137,6 +137,10 @@ export default {
     height: 80px; /* Altura fixa */
     overflow: hidden; /* Esconde conteúdo extra */
     word-wrap: break-word; /* Quebra linha se necessário */
+    /* ajusta o tamanho do display */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 /* Expressão digitada */
