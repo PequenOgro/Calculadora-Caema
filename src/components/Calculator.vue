@@ -1,10 +1,8 @@
 // No arquivo src/components/Calculator.vue
 
 <template>
-    <v-container class="calculadora-container">
-        <v-row class="v-row" justify="center" align="center">
-            <v-col  cols="11" sm="8" md="4" lg="3">
-                <v-card class="calculadora">
+        <div class="calculadora-centralizada">
+            <v-card class="calculadora">
                     <!-- Display para mostrar a expressão e o resultado -->
                     <div class="display">
                         <h3>{{ equation || '0' }}</h3>
@@ -31,10 +29,8 @@
                         <v-btn class="botao" @click="addToEquation('0')" style="grid-column: span 2;">0</v-btn>
                         <v-btn class="botao" @click="addToEquation('.')">.</v-btn>
                     </div>
-                </v-card>
-            </v-col>
-        </v-row>
-    </v-container>
+      </v-card>
+    </div>
 </template>
 
 <script>
@@ -92,27 +88,39 @@ export default {
 </script>
 
 <style scoped>
-/* Container principal da calculadora, centraliza na tela e aplica imagem de fundo */
-.calculadora-container {
-    display: flex; /* Flexbox para centralizar */
-    justify-content: center; /* Centraliza horizontalmente */
-    align-items: center; /* Centraliza verticalmente */
-    width: 100vw; /* Ocupa toda a largura da tela */
-    height: 100vh; /* Ocupa toda a altura da tela */
-    background-image: url('../assets/images/mesa.png'); /* Imagem de fundo da mesa */
-    background-size: cover; /* Cobre toda a área */
-    background-position: center; /* Centraliza a imagem */
+
+/* Centraliza a calculadora na tela e aplica imagem de fundo diretamente no componente */
+.calculadora-centralizada {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    background-image: url('../assets/images/mesa.png');
+    background-size: cover;
+    background-position: center;
     border: none !important;
     box-shadow: none !important;
-  
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1;
 }
 
 /* Caixa da calculadora */
 .calculadora {
-    width: 340px; /* Largura fixa */
+    width: 600px; /* Largura fixa */
     padding: 20px; /* Espaçamento interno */
      /*  Garante que nada "vaze" das bordas arredondadas */
     overflow: hidden; 
+    /* centralizar a calculadora na tela */
+    margin: auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra sutil */
+    border-radius: 10px; /* Cantos arredondados */
+    background-color: #2c2c2c; /* Fundo cinza escuro */
+    border: 1px solid rgba(0, 0, 0, 0.3); /* Uma borda interna sutil */
+    justify-content: center;
+    
 }
 
 /* Título da calculadora */
@@ -142,6 +150,7 @@ export default {
 
     box-shadow: none;
     border: 1px solid rgba(0, 0, 0, 0.3); /* Uma borda interna sutil */
+    width: 100%;
 }
 
 /* Expressão digitada */

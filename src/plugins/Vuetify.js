@@ -1,19 +1,22 @@
-import 'vuetify/styles';
-import { createVuetify } from 'vuetify';
+// src/plugins/Vuetify.ts
+import 'vuetify/styles'               // estilos base do Vuetify (obrigatório)
+import { createVuetify } from 'vuetify'
+import * as components from 'vuetify/components'
+import * as directives from 'vuetify/directives'
 
+// (opcional, mas recomendado se você usa <v-icon>)
+import { aliases, mdi } from 'vuetify/iconsets/mdi'
 
-export default createVuetify({
-    theme: {
-        themes: {
-            light: {
-                primary: '#4CAF50',
-                secondary: '#ff6347',
-                accent: '#6a6a6a',
-                error: '#f44336',
-                info: '#2196F3',
-                success: '#4CAF50',
-                warning: '#FFC107',
-            },
-        },
-    },
-});
+const vuetify = createVuetify({
+  components,
+  directives,
+  icons: {
+    defaultSet: 'mdi',
+    aliases,
+    sets: { mdi },
+  },
+  // opcional:
+  // theme: { defaultTheme: 'light' },
+})
+
+export default vuetify
