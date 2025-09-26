@@ -2,11 +2,9 @@
 
 <template>
     <v-container class="calculadora-container">
-        <v-row justify="center" align="center">
+        <v-row class="v-row" justify="center" align="center">
             <v-col cols="12" md="4">
                 <v-card class="calculadora">
-                    <!-- Título da calculadora -->
-                    <v-card-title class="titulo">RB-420C</v-card-title>
                     <!-- Display para mostrar a expressão e o resultado -->
                     <div class="display">
                         <h3>{{ equation || '0' }}</h3>
@@ -104,6 +102,9 @@ export default {
     background-image: url('../assets/images/mesa.png'); /* Imagem de fundo da mesa */
     background-size: cover; /* Cobre toda a área */
     background-position: center; /* Centraliza a imagem */
+    border: none !important;
+    box-shadow: none !important;
+  
 }
 
 /* Caixa da calculadora */
@@ -205,5 +206,9 @@ export default {
 /* Hover do botão de igual */
 .botao.igual:hover {
     background-color: #45a049; /* Verde mais escuro */
+}
+
+.v-row {
+     margin: 0 !important;
 }
 </style>
