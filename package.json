@@ -12,6 +12,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "vite-plugin-vuetify": "^2.1.2",
     "vue": "^3.5.18",
     "vuetify": "^3.10.3"
   },
